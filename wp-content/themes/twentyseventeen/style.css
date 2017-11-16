@@ -565,7 +565,7 @@ blockquote {
 }
 
 q {
-	quotes: "“" "”" "‘" "’";
+	quotes: "â€œ" "â€" "â€˜" "â€™";
 }
 
 blockquote:before,
@@ -4279,4 +4279,122 @@ object {
 	.site-footer {
 		padding: 0;
 	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************************************************************************/
+/******************** NEW STYLES SPECIFIC TO THIS SITE ********************/
+/**************************************************************************/
+
+
+/* Globals */
+.red-underline {
+    border-bottom: 2px solid #A22020;
+}
+
+.left-fade {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to right, black, rgba(255, 255, 255, 0) 20%);
+}
+
+a {
+   outline: 0;
+}
+
+
+
+
+
+/* Landing Page */
+body#landing-body {
+    background-size: cover;
+    background-position: center 15%;
+}
+
+header#landing-header-wrap {
+    position: absolute;
+}
+
+nav#landing-navigation {
+    margin: 25px;
+}
+
+#landing-navigation li {
+    display: inline-block;
+    padding: 0 18px;
+}
+
+#landing-navigation li
+ a {
+    color: #FCFCFC;
+	text-transform: uppercase;
+	font-family: 'Roboto', sans-serif;
+	text-shadow: 0px 0px 3px #151615;
+}
+
+#landing-navigation:hover li a {
+    opacity: .5;
+    transition: all 0.25s ease-out;
+}
+
+#landing-navigation li
+ a:hover {
+    color: #FCFCFC;
+    transition: all 0.25s ease-out;
+    opacity: 1;
+}
+
+#landing-navigation li:first-of-type {
+    padding-left: 0;
+}
+
+#landing-navigation li:last-of-type {
+    padding-right: 0;
+}
+
+#landing-navigation ul {
+    margin: 0;
+}
+
+.landing-header {
+    margin-top: 80px;
+    text-align: center;
+    padding: 0 200px;
+}
+
+.landing-header h1.site-title {
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 60px;
+    color: #FCFCFC;
+    text-shadow: 0px 0px 3px #151615;
+    padding: 0 50px;
+    text-align: center;
+}
+
+.landing-header p.site-description {
+    margin: 10px 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    color: #FCFCFC;
+    text-shadow: 0px 0px 3px #151615;
 }

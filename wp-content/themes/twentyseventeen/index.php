@@ -16,23 +16,37 @@
  */
 
 wp_head(); ?>
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Roboto" rel="stylesheet">
 
 </head>
 
-<body <?php body_class(); ?>>
+<?php  ?>
+<body id="landing-body" <?php body_class();?> style="background-image:url(<?php the_field('landing_page_background', 2); ?>);">
+<div class="left-fade"></div>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyseventeen' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="landing-header-wrap" role="banner">
+		<nav id="landing-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'twentyseventeen' ); ?>">
+			<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
+				<?php
+				echo twentyseventeen_get_svg( array( 'icon' => 'bars' ) );
+				echo twentyseventeen_get_svg( array( 'icon' => 'close' ) );
+				_e( 'Menu', 'twentyseventeen' );
+				?>
+			</button>
 
-		<?php if ( has_nav_menu( 'top' ) ) : ?>
-			<div class="navigation-top">
-				<div class="wrap">
-					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-				</div><!-- .wrap -->
-			</div><!-- .navigation-top -->
-		<?php endif; ?>
+			<?php wp_nav_menu( array(
+				'theme_location' => 'top',
+				'menu_id'        => 'top-menu',
+			) ); ?>
+		</nav><!-- #site-navigation -->
 
-		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
+		<div class="landing-header">
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<div class="red-underline"></div>
+			<?php $description = get_bloginfo( 'description', 'display' ); ?>
+			<p class="site-description"><?php echo $description; ?></p>
+		</div><!-- .landing-header -->
 
 	</header><!-- #masthead -->
