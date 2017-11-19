@@ -24,8 +24,6 @@ wp_head(); ?>
 <body id="landing-body" <?php body_class();?> style="background-image:url(<?php the_field('landing_page_background', 2); ?>);">
 <div class="left-fade"></div>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyseventeen' ); ?></a>
-
 	<header id="landing-header-wrap" role="banner">
 		<nav id="landing-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'twentyseventeen' ); ?>">
 			<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
@@ -43,10 +41,10 @@ wp_head(); ?>
 		</nav><!-- #site-navigation -->
 
 		<div class="landing-header">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h1 class="banner-title"><?php bloginfo( 'name' ); ?></h1>
 			<div class="red-underline"></div>
 			<?php $description = get_bloginfo( 'description', 'display' ); ?>
-			<p class="site-description"><?php echo $description; ?></p>
+			<p class="banner-subtitle"><?php echo $description; ?></p>
 		</div><!-- .landing-header -->
 
 	</header><!-- #masthead -->

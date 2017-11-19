@@ -4318,6 +4318,50 @@ a {
    outline: 0;
 }
 
+.banner-wrap {
+	height: 500px;
+	position: relative;
+	background: #151615;
+}
+
+.banner-image {
+	height: 100%;
+	width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    filter: grayscale(100%);
+    opacity: .4;
+}
+
+.banner-details {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+h1.banner-title {
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 60px;
+    color: #FCFCFC;
+    text-shadow: 0px 0px 3px #151615;
+    padding: 0 50px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+p.banner-subtitle {
+    margin: 10px 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    color: #FCFCFC;
+    text-shadow: 0px 0px 3px #151615;
+}
+
 
 
 
@@ -4377,24 +4421,4 @@ nav#landing-navigation {
     margin-top: 80px;
     text-align: center;
     padding: 0 200px;
-}
-
-.landing-header h1.site-title {
-    font-family: 'Crimson Text', serif;
-    font-weight: 400;
-    text-transform: none;
-    font-size: 60px;
-    color: #FCFCFC;
-    text-shadow: 0px 0px 3px #151615;
-    padding: 0 50px;
-    text-align: center;
-}
-
-.landing-header p.site-description {
-    margin: 10px 0;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-style: italic;
-    color: #FCFCFC;
-    text-shadow: 0px 0px 3px #151615;
 }

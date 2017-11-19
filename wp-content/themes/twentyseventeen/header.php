@@ -27,16 +27,23 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyseventeen' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-
-		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
-
 		<?php if ( has_nav_menu( 'top' ) ) : ?>
-			<div class="navigation-top">
+			<div class="navbar">
 				<div class="wrap">
 					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
 				</div><!-- .wrap -->
 			</div><!-- .navigation-top -->
 		<?php endif; ?>
+
+		<div class="banner-wrap">
+			<div class="banner-image" style="background-image: url(<?php the_field('banner_image'); ?>);"></div>
+
+			<div class="banner-details">
+				<?php the_title( '<h1 class="banner-title">', '</h1>' ); ?>
+				<div class="red-underline"></div>
+				<p class="banner-subtitle"><?php the_field('page_subtitle') ?></p>
+			</div>
+		</div>
 
 	</header><!-- #masthead -->
 
