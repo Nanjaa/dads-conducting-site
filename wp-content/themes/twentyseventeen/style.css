@@ -4320,7 +4320,7 @@ object {
 }
 
 a, * {
-   outline: 0;
+	outline: none !important;
 }
 
 .banner-wrap {
@@ -4397,6 +4397,17 @@ p.banner-subtitle {
 .navbar h1:hover a {
     opacity: 1;
     transition: all 0.25s ease-out;
+}
+
+footer {
+    background: #A22020;
+    text-align: center;
+    padding: 25px;
+    color: #FCFCFC;
+}
+
+footer p {
+    margin: 0;
 }
 
 
