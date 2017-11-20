@@ -4299,6 +4299,11 @@ object {
 /******************** NEW STYLES SPECIFIC TO THIS SITE ********************/
 /**************************************************************************/
 
+/* COLORS */
+/* Red: #A22020 */
+/* Black: #151615 */
+/* White: #FCFCFC */
+
 
 /* Globals */
 .red-underline {
@@ -4362,6 +4367,36 @@ p.banner-subtitle {
     text-shadow: 0px 0px 3px #151615;
 }
 
+.navbar {
+    background: #A22020;
+}
+
+.navbar * {
+    color: #FCFCFC;
+}
+
+.navbar .wrap {
+    text-align: right;
+    max-width: none;
+}
+
+.navbar h1 {
+    font-size: 35px;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navbar:hover a {
+    color: #FCFCFC;
+    opacity: .5;
+}
+
+.navbar h1:hover a {
+    opacity: 1;
+}
+
 
 
 
@@ -4377,7 +4412,7 @@ header#landing-header-wrap {
 }
 
 nav#landing-navigation {
-    margin: 25px;
+    padding: 25px;
 }
 
 #landing-navigation li {
