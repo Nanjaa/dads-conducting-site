@@ -4304,6 +4304,10 @@ object {
 /* Black: #151615 */
 /* White: #FCFCFC */
 
+/* FONTS */
+/* Crimson Text: font-family: 'Crimson Text', serif; */\
+/* Roboto: font-family: 'Roboto', sans-serif; */
+
 
 /* Globals */
 .red-underline {
@@ -4487,4 +4491,63 @@ nav#landing-navigation {
     text-transform: none;
     font-size: 38px;
     margin-bottom: 15px;
+}
+
+
+
+
+
+/* Contact Form */
+.contact-form label {
+    font-weight: 400 !important;
+    font-family: 'Roboto', sans-serif;
+    color: #151615;
+    font-size: 16px;
+    text-transform: uppercase !important;
+    margin-bottom: 15px !important;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100% !important;
+    max-width: none !important;
+    border: 2px solid #A22020 !important;
+    margin-bottom: 20px !important;
+    border-radius: 5px !important;
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    opacity: .5;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.contact-form textarea {
+    min-height: 350px;
+}
+
+.contact-form .wpforms-field {
+    padding: 0 !important;
+}
+
+.contact-form .wpforms-submit {
+    float: right !important;
+    background: #A22020 !important;
+    border: none !important;
+    border-radius: 5px !important;
+    font-family: 'Crimson Text', serif !important;
+    color:;
+    font-size: 25px !important;
+    color: #FCFCFC !important;
+    font-weight: 400;
+}
+
+.contact-form label.wpforms-error {
+    color: #A22020 !important;
+}
+
+.wpforms-confirmation-container-full {
+    background: none;
+    border: 2px solid #A22020;
+    border-radius: 5px !important;
 }
