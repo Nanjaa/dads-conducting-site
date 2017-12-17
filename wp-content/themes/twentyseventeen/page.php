@@ -36,6 +36,32 @@ get_header(); ?>
 					 
 					foreach( $categories as $category ) {
 					    echo '<div class="media-category"><p>' . $category->name . '</p><i class="material-icons accordion-status closed">add</i><i class="material-icons accordion-status open">remove</i></div>';
+					    $category_id = get_cat_ID($category->name);
+					    $args = array(
+						  'category' => $category_id
+						);
+						 
+						$category_posts = get_posts( $args );
+
+						if ($category_posts) {
+							echo '<div class="posts-wrap">';
+							foreach ($category_posts as $post):
+								setup_postdata($post); ?>
+								<div class="col-3">
+									<?php if (get_field('youtube_link')) {
+										echo '<div class="iframe-wrap">'; echo the_field('youtube_link'); echo '</div>';
+									} else if (get_field('image')) {
+										echo '<img src="'; echo the_field('image'); echo '">';
+									} ?>
+									
+									<h3 class="media-title"><?php the_title(); ?></h3>
+									<p class="media-subtitle"><?php the_field('post_subtitle');?></p>
+									<p class="media-content"><?php echo get_the_content();?></p>
+								</div>
+							<?php
+							endforeach;
+							echo '</div>';
+						}
 					}
 				}  else {
 					// All other pages

@@ -4600,3 +4600,46 @@ nav#landing-navigation {
 .accordion-status.open {
     display:  none;
 }
+
+.posts-wrap {
+    padding-top: 45px;
+    text-align:  center;
+}
+
+.col-3 {
+    width:  33%;
+    display:  inline-block;
+    padding: 0 45px;
+    margin-bottom:  45px;
+}
+
+.media-title {
+    font-family: 'Crimson Text', serif;
+    font-size:  25px;
+    font-weight: bold;
+    padding:  0;
+    margin: 15px 0 5px 0;
+}
+
+.media-subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size:  16px;
+    font-style:  italic;
+    margin-bottom:  15px;
+}
+
+.media-content {
+    font-family: 'Roboto', sans-serif;
+    font-size:  16px;
+    text-align: left;
+}
+
+.iframe-wrap {
+    width:  100%;
+    height:  200px;
+}
+
+.iframe-wrap iframe {
+    width: 100% !important;
+    height:  100% !important;
+}
