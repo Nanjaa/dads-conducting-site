@@ -18,6 +18,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <?php wp_head(); ?>
 </head>
@@ -62,4 +63,11 @@
 	?>
 
 	<div class="site-content-contain">
-		<div id="content" class="site-content">
+
+	<?php
+		if ( is_page( 'media-gallery' )) {
+			echo '<div id="media-gallery-content" class="site-content">';
+		} else {
+			echo '<div id="content" class="site-content">';
+		}
+	?>

@@ -22,16 +22,34 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php
-			while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/page/content', 'page' );
+				if ( is_page( 'media-gallery' )) {
+					echo '<h1>';
+					echo the_field('content_title');
+					echo '</h1>';
+					// Media Gallery Page
+				    $categories = get_categories( array(
+					    'orderby' => 'name',
+					    'order'   => 'ASC',
+					    'exclude' => 3
+					) );
+					 
+					foreach( $categories as $category ) {
+					    echo '<div class="media-category"><p>' . $category->name . '</p><i class="material-icons accordion-status closed">add</i><i class="material-icons accordion-status open">remove</i></div>';
+					}
+				}  else {
+					// All other pages
+					while ( have_posts() ) : the_post();
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+						get_template_part( 'template-parts/page/content', 'page' );
 
-			endwhile; // End of the loop.
+						// If comments are open or we have at least one comment, load up the comment template.
+						if ( comments_open() || get_comments_number() ) :
+							comments_template();
+						endif;
+
+					endwhile; // End of the loop.
+				}
 			?>
 
 		</main><!-- #main -->
