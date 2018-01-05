@@ -246,4 +246,34 @@
 		$body.addClass( 'has-header-video' );
 	});
 
+	$('.media-category').on('click', function() {
+		if (!$(this).hasClass('active')) {
+			$(this).addClass('active');
+			$(this).find('.closed').hide();
+			$(this).find('.open').show();
+			if ($(this).hasClass('last-category')) {
+				$(this).addClass('flat-bottom');
+			}
+			$(this).next().slideDown();
+		} else {
+			$(this).removeClass('active');
+			$(this).find('.closed').show();
+			$(this).find('.open').hide();
+			if ($(this).hasClass('last-category')) {
+				$(this).removeClass('flat-bottom');
+			}
+			$(this).next().slideUp();
+		}
+	});
+
+	$('.posts-wrap img').on('click', function() {
+		var imgSrc = $(this).attr('src');
+	  $('.imgOverlay img').attr('src', imgSrc);
+	  $('.imgOverlay').fadeToggle(300);
+	});
+
+	$('.overlayBg, .closeOverlay').on('click', function() {
+		$('.imgOverlay').fadeToggle(250);
+	});
+
 })( jQuery );

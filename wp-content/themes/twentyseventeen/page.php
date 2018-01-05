@@ -27,6 +27,10 @@ get_header(); ?>
 					echo '<h1>';
 					echo the_field('content_title');
 					echo '</h1>';
+
+					// overlay
+					echo '<div class="imgOverlay"><div class="overlayBg"></div><i class="material-icons closeOverlay">clear</i><img src=""></div>';
+					
 					// Media Gallery Page
 				    $categories = get_categories( array(
 					    'orderby' => 'name',
@@ -34,8 +38,20 @@ get_header(); ?>
 					    'exclude' => 3
 					) );
 					 
+					$i = 0;
+					$len = count($categories);
+					
 					foreach( $categories as $category ) {
-					    echo '<div class="media-category"><p>' . $category->name . '</p><i class="material-icons accordion-status closed">add</i><i class="material-icons accordion-status open">remove</i></div>';
+					    echo '<div class="media-category';
+					    // rounded corners for the first and last
+					    if ($i == 0) {
+					        echo ' first-category';
+					    } else if ($i == $len - 1) {
+					        echo ' last-category';
+					    }
+					    $i++;
+
+					    echo '"><p>' . $category->name . '</p><i class="material-icons accordion-status closed">add</i><i class="material-icons accordion-status open">remove</i></div>';
 					    $category_id = get_cat_ID($category->name);
 					    $args = array(
 						  'category' => $category_id
@@ -44,14 +60,15 @@ get_header(); ?>
 						$category_posts = get_posts( $args );
 
 						if ($category_posts) {
-							echo '<div class="posts-wrap">';
+							echo '<div class="posts-wrap accordion-closed">';
+
 							foreach ($category_posts as $post):
 								setup_postdata($post); ?>
 								<div class="col-3">
 									<?php if (get_field('youtube_link')) {
 										echo '<div class="iframe-wrap">'; echo the_field('youtube_link'); echo '</div>';
 									} else if (get_field('image')) {
-										echo '<img src="'; echo the_field('image'); echo '">';
+										echo '<img class="media-gallery-img" alt="'; echo the_title(); echo '" src="'; echo the_field('image'); echo '">';
 									} ?>
 									
 									<h3 class="media-title"><?php the_title(); ?></h3>

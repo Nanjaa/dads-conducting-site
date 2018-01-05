@@ -4572,7 +4572,7 @@ nav#landing-navigation {
     color: #FCFCFC;
 }
 
-.media-category:hover {
+.media-category:hover, .media-category.active {
 	background: #701212;
 }
 
@@ -4583,12 +4583,16 @@ nav#landing-navigation {
     display: inline-block;
 }
 
-.media-category:first-of-type {
+.media-category.first-category {
     border-radius: 25px 25px 0 0;
 }
 
-.media-category:last-of-type {
+.media-category.last-category {
     border-radius:  0 0 25px 25px;
+}
+
+.media-category.last-category.flat-bottom {
+	border-radius: 0;
 }
 
 .accordion-status {
@@ -4601,14 +4605,10 @@ nav#landing-navigation {
     display:  none;
 }
 
-.posts-wrap {
-    padding-top: 45px;
-    text-align:  center;
-}
-
 .col-3 {
     width:  33%;
     display:  inline-block;
+    vertical-align: top;
     padding: 0 45px;
     margin-bottom:  45px;
 }
@@ -4619,6 +4619,7 @@ nav#landing-navigation {
     font-weight: bold;
     padding:  0;
     margin: 15px 0 5px 0;
+    text-align: center;
 }
 
 .media-subtitle {
@@ -4626,12 +4627,12 @@ nav#landing-navigation {
     font-size:  16px;
     font-style:  italic;
     margin-bottom:  15px;
+    text-align: center;
 }
 
 .media-content {
     font-family: 'Roboto', sans-serif;
     font-size:  16px;
-    text-align: left;
 }
 
 .iframe-wrap {
@@ -4642,4 +4643,54 @@ nav#landing-navigation {
 .iframe-wrap iframe {
     width: 100% !important;
     height:  100% !important;
+}
+
+.accordion-closed {
+    display: none;
+    padding: 50px 0;
+}
+
+/* Media Gallery Overlay */
+.media-gallery-img {
+	cursor: pointer;
+}
+
+.imgOverlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.overlayBg {
+  position: absolute;
+  background: #151615;
+  opacity: .8;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.imgOverlay img {
+  position: absolute;
+  height: 85%;
+  width: auto;
+  opacity: 1;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1;
+}
+
+.closeOverlay {
+  color: #FCFCFC;
+  font-size: 25px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  z-index: 2;
 }
