@@ -23,7 +23,8 @@ get_header(); ?>
 
 			<?php
 
-				if ( is_page( 'media-gallery' )) {
+				// Media gallery
+				if ( is_page(7)) {
 					echo '<h1>';
 					echo the_field('content_title');
 					echo '</h1>';
@@ -80,8 +81,35 @@ get_header(); ?>
 							echo '</div>';
 						}
 					}
-				}  else {
-					// All other pages
+				// End of Media Gallery
+
+				// Thoughts Landing
+				}  else if ( is_page(9)) {
+					echo '<h1>';
+					echo the_field('content_title');
+					echo '</h1>';
+
+					// Media Gallery Page
+				    $posts = get_posts( array(
+					    'category' => 3
+					) );
+					
+					foreach ($posts as $post):
+						setup_postdata($post); ?>
+						<div class="thoughts-link-wrap">
+							<?php
+							the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>');?>
+							<p><?php the_field('blurb')?></p>
+						</div>
+					<?php
+					endforeach;
+
+					get_sidebar();
+
+				// End of Thoughs Landing
+
+				// All other pages
+				} else {
 					while ( have_posts() ) : the_post();
 
 						get_template_part( 'template-parts/page/content', 'page' );

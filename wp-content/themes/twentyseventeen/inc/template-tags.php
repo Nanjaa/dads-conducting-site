@@ -14,16 +14,8 @@ if ( ! function_exists( 'twentyseventeen_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function twentyseventeen_posted_on() {
-
-	// Get the author name; wrap it in a link.
-	$byline = sprintf(
-		/* translators: %s: post author */
-		__( 'by %s', 'twentyseventeen' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a></span>'
-	);
-
 	// Finally, let's write all of this to the page.
-	echo '<span class="posted-on">' . twentyseventeen_time_link() . '</span><span class="byline"> ' . $byline . '</span>';
+	echo '<span class="posted-on">' . twentyseventeen_time_link() . '</span>';
 }
 endif;
 
@@ -49,7 +41,7 @@ function twentyseventeen_time_link() {
 	return sprintf(
 		/* translators: %s: post date */
 		__( '<span class="screen-reader-text">Posted on</span> %s', 'twentyseventeen' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		'<p>' . $time_string . '</p>'
 	);
 }
 endif;

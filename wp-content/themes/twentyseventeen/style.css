@@ -1220,7 +1220,7 @@ a .nav-title,
 	transition: color 80ms ease-in, box-shadow 130ms ease-in-out;
 	transition: color 80ms ease-in, box-shadow 130ms ease-in-out, -webkit-box-shadow 130ms ease-in-out;
 }
-
+/*
 .entry-content a:focus,
 .entry-content a:hover,
 .entry-summary a:focus,
@@ -1272,7 +1272,7 @@ a:hover .nav-title,
 	color: #000;
 	-webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 rgba(0, 0, 0, 1);
 	box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 rgba(0, 0, 0, 1);
-}
+}*/
 
 /* Fixes linked images */
 .entry-content a img,
@@ -4392,15 +4392,14 @@ p.banner-subtitle {
     transform: translateY(-50%);
 }
 
-.navbar:hover a {
+.navbar:hover nav a {
     color: #FCFCFC;
     opacity: .5;
     transition: all 0.25s ease-out;
 }
 
-.navbar h1:hover a {
-    opacity: 1;
-    transition: all 0.25s ease-out;
+h1.banner-title:hover a {
+    color:  inherit;
 }
 
 footer {
@@ -4414,7 +4413,37 @@ footer p {
     margin: 0;
 }
 
+button {
+    background:  #A22020;
+}
 
+button:hover {
+    background:  #701212;
+}
+
+a {
+	color: #A22020;
+}
+
+a:hover {
+	color: #701212;
+}
+
+h3 {
+	font-size: 25px;
+	font-family: Crimson Text: font-family: 'Crimson Text', serif;
+}
+
+hr {
+    background:  #A22020;
+}
+
+h2 {
+    font-family:  'Crimson Text', serif;
+    font-size: 30px;
+    color:  #151615;
+    margin-bottom:  25px;
+}
 
 
 
@@ -4693,4 +4722,151 @@ nav#landing-navigation {
   right: 15px;
   cursor: pointer;
   z-index: 2;
+}
+
+.thoughts-link-wrap a {
+    font-size:  25px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.thoughts-link-wrap p {
+    font-size:  16px;
+    font-family: 'Roboto', sans-serif;
+    font-style:  italic;
+}
+
+
+/* Sidebar */
+.widget-area input {
+    font-family: 'Roboto', sans-serif;
+    font-size:  16px;
+}
+
+.widget-title {
+    font-family: 'Crimson Text', serif;
+    text-transform: none !important;
+    letter-spacing: inherit !important;
+    font-weight:  400 !important;
+    font-size: 25px !important;
+    line-height: inherit !important;
+    margin-bottom: 10px !important;
+}
+
+aside a:hover {
+    color: #701212 !important;
+    box-shadow:  none !important;
+}
+
+
+/* Individual Thoughts Posts */
+.entry-meta time {
+    text-transform: none;
+    letter-spacing: initial;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: inherit;
+    font-family: 'Roboto', sans-serif;
+    color:  #151615;
+}
+
+.entry-meta p {
+    margin-bottom:  0;
+}
+
+#comments h2, #comments h3 {
+	font-family: 'Crimson Text', serif;
+	font-size: 30px;
+	margin-bottom: 25px;
+	border-bottom:  1px solid #A22020;
+}
+
+footer.comment-meta {
+    background:  none;
+    color:  black;
+    padding: 0;
+}
+
+b.fn {
+    font-weight:  bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.comment-author {
+    text-align:  left;
+}
+
+.comment-metadata {
+    text-align:  left;
+}
+
+.comment-metadata * {
+    font-weight:  400;
+    letter-spacing: initial;
+    text-transform:  none;
+    font-size:  12px;
+    font-style:  italic;
+}
+
+.comment-author.vcard img {
+    left:  0;
+}
+
+b.fn {
+    margin-left: 65px;
+}
+
+.comment-metadata {
+    margin-left: 65px;
+}
+
+.reply {
+    margin-left:  2em;
+}
+
+.reply {
+    margin-left:  2em;
+}
+
+textarea#comment {
+    border:  2px solid #A22020 !important;
+    border-radius:  5px !important;
+}
+
+.comment-form-comment label {
+    font-weight: 400 !important;
+    font-family: 'Roboto', sans-serif;
+    color: #151615;
+    font-size: 16px;
+    text-transform: uppercase !important;
+}
+
+#commentform input#submit {
+    float: right !important;
+    background: #A22020 !important;
+    border: none !important;
+    border-radius: 5px !important;
+    font-family: 'Crimson Text', serif !important;
+    font-size: 25px !important;
+    color: #FCFCFC !important;
+    font-weight: 400;
+    padding:  10px 15px;
+}
+
+span.nav-subtitle {
+    text-transform: none;
+    letter-spacing: initial;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: inherit;
+    font-family: 'Roboto', sans-serif;
+    color:  #151615;
+    margin-bottom:  0;
+}
+
+span.nav-title {
+    color: #A22020;
+}
+
+.nav-links a:hover .nav-title {
+    color: #701212;
 }
