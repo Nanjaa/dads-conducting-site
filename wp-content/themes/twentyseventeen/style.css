@@ -4520,6 +4520,7 @@ nav#landing-navigation {
     text-transform: none;
     font-size: 38px;
     margin-bottom: 15px;
+    letter-spacing: initial;
 }
 
 
@@ -4869,4 +4870,14 @@ span.nav-title {
 
 .nav-links a:hover .nav-title {
     color: #701212;
+}
+
+
+/* Search Results */
+header.page-header.search-header {
+    padding-bottom: 10px;
+}
+
+.search-header h1.page-title {
+    border-bottom: 1px solid #A22020;
 }
