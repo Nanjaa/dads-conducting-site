@@ -1,61 +1,91 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying search results pages
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
  * @package WordPress
  * @subpackage Twenty_Seventeen
  * @since 1.0
  * @version 1.0
  */
+?><!DOCTYPE html>
+<html <?php language_attributes(); ?> class="no-js no-svg">
+<head>
+<meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-get_header(); ?>
+<?php wp_head(); ?>
+</head>
 
-<div class="wrap">
+<body <?php body_class(); ?>>
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyseventeen' ); ?></a>
 
-	<?php if ( have_posts() ) : ?>
-		<header class="page-header">
-			<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="taxonomy-description">', '</div>' );
-			?>
-		</header><!-- .page-header -->
-	<?php endif; ?>
+	<header id="masthead" class="site-header" role="banner">
+		<?php if ( has_nav_menu( 'top' ) ) : ?>
+			<div class="navbar">
+				<div class="wrap">
+					<h1 class="banner-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Warren Olfert</a></h1>
+					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
+				</div><!-- .wrap -->
+			</div><!-- .navigation-top -->
+		<?php endif; ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<div class="banner-wrap">
+			<div class="banner-image" style="background-image: url(<?php the_field('banner_image'); ?>);"></div>
 
-		<?php
-		if ( have_posts() ) : ?>
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			<div class="banner-details">
+				<h1 class="banner-title">Archive Results</h1>
+				<div class="red-underline"></div>
+				<?php the_archive_title( '<p class="banner-subtitle">', '</p>' ); ?>
+			</div>
+		</div>
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/post/content', get_post_format() );
+	</header><!-- #masthead -->
 
-			endwhile;
+	<div class="site-content-contain">
+		<div id="content" class="site-content">
 
-			the_posts_pagination( array(
-				'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
-				'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
-			) );
+				<header class="page-header search-header">
+					<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
+				</header><!-- .page-header -->
 
-		else :
+				<div id="primary" class="content-area">
+					<main id="main" class="site-main" role="main">
 
-			get_template_part( 'template-parts/post/content', 'none' );
+						<?php
+						if ( have_posts() ) : ?>
+							<?php
+							/* Start the Loop */
+							while ( have_posts() ) : the_post();
+								if ( in_category( '3' ) ) :
+									?><div class="thoughts-link-wrap">
+										<?php
+										the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>');?>
+										<p><?php the_field('blurb')?></p>
+									</div>
+									<?php
+								endif;
+							endwhile;
 
-		endif; ?>
+							the_posts_pagination( array(
+								'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
+								'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
+								'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
+							) );
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-</div><!-- .wrap -->
+						else :
 
-<?php get_footer();
+							get_template_part( 'template-parts/post/content', 'none' );
+
+						endif; ?>
+
+						</main><!-- #main -->
+					</div><!-- #primary -->
+					<?php get_sidebar(); ?>
+				</div><!-- .wrap -->
+
+				<?php get_footer();
