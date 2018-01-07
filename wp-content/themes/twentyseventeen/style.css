@@ -4424,6 +4424,7 @@ h1.banner-title, h2.banner-title {
     padding: 0 50px;
     text-align: center;
     margin-bottom: 0;
+    line-height: 1;
 }
 
 p.banner-subtitle {
@@ -4567,6 +4568,23 @@ i.close-navigation {
 	    transition: all 0.25s ease-out;
 	}
 }
+@media screen and (max-width: 767px) {
+	nav li {
+	    font-size: 20px;
+	}
+
+	i.close-navigation {
+	    font-size: 40px;
+	}
+
+	h1.banner-title {
+	    padding: 0 35px;
+	}
+
+	h2.banner-title {
+    padding:  0;
+}
+}
 
 
 
@@ -4670,6 +4688,7 @@ nav#landing-navigation {
 /* ------------------------------------------------------------ General Page Content ------------------------------------------------------------ */
 .site-content#content, .site-content#media-gallery-content {
     padding: 50px 0;
+    width: 85%;
     max-width: 750px;
     margin: 0 auto;
 }
@@ -4843,6 +4862,17 @@ nav#landing-navigation {
 @media screen and (max-width: 1279px) {
 	.col-3 {
 	    width: 49%;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.col-3 {
+	    width: 100%;
+	    padding: 0 20px;
+	}
+
+	.posts-wrap {
+	    padding-bottom:  0;
 	}
 }
 
