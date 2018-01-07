@@ -4301,6 +4301,7 @@ object {
 
 /* COLORS */
 /* Red: #A22020 */
+/* Dark Red: #701212 */
 /* Black: #151615 */
 /* White: #FCFCFC */
 
@@ -4308,7 +4309,7 @@ object {
 /* Crimson Text: font-family: 'Crimson Text', serif; */
 /* Roboto: font-family: 'Roboto', sans-serif; */
 
-/* Super basic globals */
+/* ------------------------------------------------------------ Super basic globals ------------------------------------------------------------ */
 body, .site-content-contain {
     background:  #FCFCFC;
 }
@@ -4367,10 +4368,20 @@ hr {
     background:  #A22020;
 }
 
+i {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
 
 
 
-/* Other Globals */
+
+/* ------------------------------------------------------------ Other Globals ------------------------------------------------------------ */
 .red-underline {
     border-bottom: 2px solid #A22020;
 }
@@ -4490,9 +4501,45 @@ footer p {
     color:  #A22020 !important;
 }
 
+i.close-navigation {
+    position:  absolute;
+    top: 25px;
+    right:  25px;
+    font-size: 50px;
+    color: #FCFCFC;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	nav#landing-navigation {
+	    height:  100vh;
+	    width: 100%;
+	    background: #A22020;
+	    position:  absolute;
+	    top:  0;
+	    left: 0;
+	    z-index:  9;
+	}
+
+	nav li {
+	    width:  100%;
+	    padding: 0 !important;
+	    font-size: 38px;
+	    margin: 20px 0;
+	    text-align:  center;
+	}
+
+	ul#top-menu {
+	    position:  absolute;
+	    top:  50%;
+	    left: 50%;
+	    transform: translateY(-50%) translateX(-50%);
+	}
+}
 
 
-/* Landing Page */
+
+/* ------------------------------------------------------------ Landing Page ------------------------------------------------------------ */
 body#landing-body {
     background-size: cover;
     background-position: center 15%;
@@ -4549,10 +4596,44 @@ nav#landing-navigation {
     padding: 0 200px;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	body#landing-body {
+	    background-position: 90% center;
+	}
+	.landing-header {
+	    width: 450px;
+	    padding:  0;
+	    margin: 0;
+	    position:  absolute;
+	    top: 5%;
+	    left:  50%;
+	    transform: translateX(-50%);
+	}
+
+	header#landing-header-wrap {
+	    position:  relative;
+	    height:  100vh;
+	}
+
+	nav#landing-navigation {
+	    display:  none;
+	}
+
+	#landing-body i.open-navigation {
+	    color:  #A22020;
+	    font-size: 50px;
+	    position:  absolute;
+	    top: 25px;
+	    left:  25px;
+	    line-height:  1;
+	    cursor: pointer;
+	}
+}
 
 
 
-/* General Page Content */
+
+/* ------------------------------------------------------------ General Page Content ------------------------------------------------------------ */
 .site-content#content, .site-content#media-gallery-content {
     padding: 50px 0;
     max-width: 750px;
@@ -4572,7 +4653,7 @@ nav#landing-navigation {
 
 
 
-/* Contact Form */
+/* ------------------------------------------------------------ Contact Form ------------------------------------------------------------ */
 .contact-form label {
     font-weight: 400 !important;
     font-family: 'Roboto', sans-serif;
@@ -4631,7 +4712,7 @@ nav#landing-navigation {
 
 
 
-/* Media Gallery */
+/* ------------------------------------------------------------ Media Gallery ------------------------------------------------------------ */
 #media-gallery-content {
     width:  75% !important;
     max-width:  1500px !important;
@@ -4725,7 +4806,7 @@ nav#landing-navigation {
     padding: 50px 0;
 }
 
-/* Media Gallery Overlay */
+/* ------------------------------------------------------------ Media Gallery Overlay ------------------------------------------------------------ */
 .media-gallery-img {
 	cursor: pointer;
 }
@@ -4782,7 +4863,7 @@ nav#landing-navigation {
 }
 
 
-/* Sidebar */
+/* ------------------------------------------------------------ Sidebar ------------------------------------------------------------ */
 .widget-area input {
     font-family: 'Roboto', sans-serif;
     font-size:  16px;
@@ -4804,7 +4885,7 @@ aside a:hover {
 }
 
 
-/* Individual Thoughts Posts */
+/* ------------------------------------------------------------ Individual Thoughts Posts ------------------------------------------------------------ */
 .entry-meta time {
     text-transform: none;
     letter-spacing: initial;
@@ -4918,7 +4999,7 @@ span.nav-title {
 }
 
 
-/* Search Results */
+/* ------------------------------------------------------------ Search Results ------------------------------------------------------------ */
 header.page-header.search-header {
     padding-bottom: 10px;
 }

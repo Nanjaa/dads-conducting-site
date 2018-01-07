@@ -276,4 +276,14 @@
 		$('.imgOverlay').fadeToggle(250);
 	});
 
+	$('.open-navigation').on('click', function() {
+		$('nav').slideDown();
+	});
+
+	$('.close-navigation').on('click', function() {
+		$('nav'.slideDown());
+	});
+
+	console.log('hello?');
+
 })( jQuery );

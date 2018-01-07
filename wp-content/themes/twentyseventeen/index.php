@@ -1,13 +1,6 @@
 <?php
 /**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WordPress
  * @subpackage Twenty_Seventeen
@@ -15,8 +8,17 @@
  * @version 1.0
  */
 
+?><!DOCTYPE html>
+<html <?php language_attributes(); ?> class="no-js no-svg">
+<head>
+<meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<?php
 wp_head(); ?>
 <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Roboto" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
@@ -26,6 +28,7 @@ wp_head(); ?>
 <div id="page" class="site">
 	<header id="landing-header-wrap" role="banner">
 		<nav id="landing-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'twentyseventeen' ); ?>">
+			<i class="material-icons close-navigation no-desktop">clear</i>
 			<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
 				<?php
 				echo twentyseventeen_get_svg( array( 'icon' => 'bars' ) );
@@ -46,5 +49,7 @@ wp_head(); ?>
 			<?php $description = get_bloginfo( 'description', 'display' ); ?>
 			<p class="banner-subtitle"><?php echo $description; ?></p>
 		</div><!-- .landing-header -->
+
+		<i class="material-icons open-navigation no-desktop">menu</i>
 
 	</header><!-- #masthead -->
