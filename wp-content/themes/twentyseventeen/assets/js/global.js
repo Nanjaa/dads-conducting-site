@@ -277,13 +277,13 @@
 	});
 
 	$('.open-navigation').on('click', function() {
-		$('nav').slideDown();
+		$('#landing-navigation').slideDown();
+		$('body').css('overflow', 'hidden');
 	});
 
 	$('.close-navigation').on('click', function() {
-		$('nav'.slideDown());
+		$('#landing-navigation').slideUp();
+		$('body').css('overflow', 'auto');
 	});
-
-	console.log('hello?');
 
 })( jQuery );
