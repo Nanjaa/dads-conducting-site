@@ -4510,7 +4510,13 @@ i.close-navigation {
     cursor: pointer;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
+	.no-desktop {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
 	nav#landing-navigation {
 	    height:  100vh;
 	    width: 100%;
@@ -4534,6 +4540,10 @@ i.close-navigation {
 	    top:  50%;
 	    left: 50%;
 	    transform: translateY(-50%) translateX(-50%);
+	}
+
+	.navbar .wrap {
+	    height: 94px;
 	}
 }
 
@@ -4596,7 +4606,7 @@ nav#landing-navigation {
     padding: 0 200px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
 	body#landing-body {
 	    background-position: 90% center;
 	}

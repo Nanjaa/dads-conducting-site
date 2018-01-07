@@ -20,9 +20,33 @@ wp_head(); ?>
 <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Roboto" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
 </head>
 
-<?php  ?>
+<script>
+	$('.open-navigation').on('click touch', function() {
+		console.log(1);
+		$('nav').slideDown();
+	});
+
+	$('.close-navigation').on('click touch', function() {
+		console.log(2);
+		$('nav'.slideDown());
+	});
+
+	$('banner-title').on('click touch', function() {
+		console.log('test 2');
+	});
+
+	$(window).on('click touch', function() {
+		console.log($(this));
+		console.log('this works');
+	});
+
+	console.log('pls');
+</script>
+
 <body id="landing-body" <?php body_class();?> style="background-image:url(<?php the_field('landing_page_background', 2); ?>);">
 <div class="left-fade"></div>
 <div id="page" class="site">

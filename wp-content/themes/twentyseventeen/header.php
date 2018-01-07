@@ -33,6 +33,7 @@
 				<div class="wrap">
 					<h2 class="banner-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Warren Olfert</a></h2>
 					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
+					<i class="material-icons open-navigation no-desktop">menu</i>
 				</div><!-- .wrap -->
 			</div><!-- .navigation-top -->
 		<?php endif; ?>
