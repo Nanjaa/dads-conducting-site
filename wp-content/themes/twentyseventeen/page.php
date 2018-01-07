@@ -25,9 +25,9 @@ get_header(); ?>
 
 				// Media gallery
 				if ( is_page(7)) {
-					echo '<h1>';
+					echo '<h2>';
 					echo the_field('content_title');
-					echo '</h1>';
+					echo '</h2>';
 
 					// overlay
 					echo '<div class="imgOverlay"><div class="overlayBg"></div><i class="material-icons closeOverlay">clear</i><img src=""></div>';
@@ -85,9 +85,9 @@ get_header(); ?>
 
 				// Thoughts Landing
 				}  else if ( is_page(9)) {
-					echo '<h1>';
+					echo '<h2>';
 					echo the_field('content_title');
-					echo '</h1>';
+					echo '</h2>';
 
 					// Media Gallery Page
 				    $posts = get_posts( array(

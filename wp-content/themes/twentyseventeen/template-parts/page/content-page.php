@@ -13,9 +13,9 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<h1>
+	<h2>
 		<?php the_field('content_title') ?>
-	</h1>
+	</h2>
 	<?php
 		the_content();
 

@@ -28,7 +28,7 @@
 		<?php if ( has_nav_menu( 'top' ) ) : ?>
 			<div class="navbar">
 				<div class="wrap">
-					<h1 class="banner-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Warren Olfert</a></h1>
+					<h2 class="banner-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Warren Olfert</a></h2>
 					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
 				</div><!-- .wrap -->
 			</div><!-- .navigation-top -->
@@ -51,9 +51,9 @@
 
 				<header class="page-header search-header">
 					<?php if ( have_posts() ) : ?>
-						<h1 class="page-title"><?php printf( __( 'Search Results for "%s', 'twentyseventeen' ), '<span>' . get_search_query() . '"</span>' ); ?></h1>
+						<h2 class="page-title"><?php printf( __( 'Search Results for "%s', 'twentyseventeen' ), '<span>' . get_search_query() . '"</span>' ); ?></h2>
 					<?php else : ?>
-						<h1 class="page-title"><?php _e( 'Nothing Found', 'twentyseventeen' ); ?></h1>
+						<h2 class="page-title"><?php _e( 'Nothing Found', 'twentyseventeen' ); ?></h2>
 					<?php endif; ?>
 				</header><!-- .page-header -->
 

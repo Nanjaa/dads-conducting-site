@@ -31,7 +31,7 @@
 		<?php if ( has_nav_menu( 'top' ) ) : ?>
 			<div class="navbar">
 				<div class="wrap">
-					<h1 class="banner-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Warren Olfert</a></h1>
+					<h2 class="banner-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Warren Olfert</a></h2>
 					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
 				</div><!-- .wrap -->
 			</div><!-- .navigation-top -->
