@@ -4368,7 +4368,7 @@ hr {
     background:  #A22020;
 }
 
-i {
+i, .filter-list li {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
@@ -4520,12 +4520,6 @@ i.close-navigation {
 	.no-desktop {
 		display: none !important;
 	}
-
-	.navbar:hover nav a {
-	    color: #FCFCFC;
-	    opacity: .5;
-	    transition: all 0.25s ease-out;
-	}
 }
 
 @media screen and (max-width: 1279px) {
@@ -4560,12 +4554,6 @@ i.close-navigation {
 
 	.navbar .wrap {
 	    height: 74px;
-	}
-
-	.navbar ul:hover li a {
-	    color: #FCFCFC;
-	    opacity: .5;
-	    transition: all 0.25s ease-out;
 	}
 }
 @media screen and (max-width: 767px) {
@@ -4636,19 +4624,7 @@ nav#landing-navigation {
     padding: 0 200px;
 }
 
-#landing-navigation li
- a:hover {
-    color: #FCFCFC;
-    transition: all 0.25s ease-out;
-    opacity: 1;
-}
-
 @media screen and (min-width: 1280px) {
-	#landing-navigation ul:hover li a {
-	    opacity: .5;
-	    transition: all 0.25s ease-out;
-	}
-
 	nav#landing-navigation {
 	    display:  block !important;
 	}
@@ -4682,11 +4658,6 @@ nav#landing-navigation {
 	    top: 25px;
 	    left:  25px;
 	    transform: none;
-	}
-
-	#landing-navigation ul:hover li a {
-	    opacity: .5;
-	    transition: all 0.25s ease-out;
 	}
 }
 
@@ -4722,7 +4693,7 @@ nav#landing-navigation {
     letter-spacing: initial;
 }
 
-#page:not(#landing-body #page) {
+#page {
     min-height: calc(100vh - 74px);
 }
 
@@ -5108,7 +5079,7 @@ header.page-header.search-header {
     border-bottom: 1px solid #A22020;
 }
 
-/* Repertoire */
+/* ------------------------------------------------------------ Repertoire ------------------------------------------------------------ */
 .filter-list h3 {
     margin:  0;
 }
@@ -5134,4 +5105,32 @@ header.page-header.search-header {
 
 .filter-list li.filter-active {
 	background: #701212;
+}
+
+.repertoire-pieces p {
+    margin-bottom: 5px;
+}
+
+/* ------------------------------------------------------------ Navigation Animation ------------------------------------------------------------ */
+
+#landing-navigation li a {
+    color: #FCFCFC;
+    transition: all 0.25s linear;
+}
+
+@media screen and (min-width: 1280px) {
+	#landing-navigation:hover li a {
+	    opacity: .5;
+	}
+}
+
+@media screen and (max-width: 1279px) {
+	#landing-navigation ul:hover li a {
+	    opacity: .5;
+	}
+}
+
+#landing-navigation ul li a:hover {
+    color: #FCFCFC;
+    opacity: 1;
 }
