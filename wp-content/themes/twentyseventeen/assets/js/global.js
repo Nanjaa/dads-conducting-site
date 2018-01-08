@@ -288,19 +288,48 @@
 
 	// Repertoire
 
+	// TODO: make sure it resets if nothing is selected
+	var repFilters = [];
 	$('.filter-list li').on('click', function() {
 		$('.filter-reset').removeClass('filter-active');
+		// Remove filter
 		if ($(this).hasClass('filter-active')) {
 			$(this).removeClass('filter-active');
-			// if (!$('.filter-list').find('.filter-active')) {
-			// 	$('.filter-reset').addClass('filter-active');
-			// }
+			var index = repFilters.indexOf($(this).attr('id'));
+			if (index > -1) {
+			    repFilters.splice(index, 1);
+			}
+			if (repFilters.length == 0) {
+				$('.filter-reset').addClass('filter-active');
+				repFilters = [];
+				$('.repertoire-pieces p').slideDown('fast');
+			}
+		// Reset all filters
 		} else if ($(this).hasClass('filter-reset')) {
 			$('.filter-active').removeClass('filter-active');
 			$(this).addClass('filter-active');
+			repFilters = [];
+			$('.repertoire-pieces p').slideDown('fast');
+		// Add filter
 		} else {
 			$(this).addClass('filter-active');
+			repFilters.push($(this).attr('id'));
 		}
+
+		$('.repertoire-pieces p').each(function() {
+			var shouldShow = true;
+			for (var filter of repFilters) {
+				if (!$(this).hasClass(filter)) {
+					shouldShow = false;
+				}
+			}
+
+			if (shouldShow) {
+				$(this).slideDown('fast');
+			} else {
+				$(this).slideUp('fast');
+			}
+		});
 	})
 
 })( jQuery );

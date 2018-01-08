@@ -119,23 +119,35 @@ get_header(); ?>
 					    echo '<div class="filter-list"><h3>Filter Repertoire</h3><ul>';
 					    echo '<li class="filter-reset filter-active">All</li>';
 					    foreach ( $terms as $term ) {
-					        echo '<li>' . $term->name . '</li>';
+					        echo '<li id="' . str_replace(" ","-", $term->name) . '">' . $term->name . '</li>';
 					    }
 					    echo '</ul></div>';
 					}
 
-					echo '<h3>Pieces:</h3>';
+					?><h3>Pieces:</h3><div class="repertoire-pieces">
 
-					$posts = get_posts( array(
+					<?php $posts = get_posts( array(
 					    'post_type' => 'repertoire_pieces'
 					) );
-					
-					foreach ($posts as $post):
-						setup_postdata($post); ?>
-						<?php
-						the_title( '<p>', '</p>');?>
-					<?php
-					endforeach;
+						foreach ($posts as $post):
+							setup_postdata($post); 
+
+							$post_terms = get_the_terms( get_the_ID(), 'repertoire_type' );
+							if ( $post_terms && ! is_wp_error( $post_terms ) ) : 
+							 
+							    $piece_types = array();
+							 
+							    foreach ( $post_terms as $post_terms ) {
+							        $piece_types[] = $post_terms->name;
+							    }
+							                         
+							    $joined_terms = join( " ", str_replace(" ", "-", $piece_types) );
+							    ?>
+							 
+							    <p class="<?php echo $joined_terms; ?>"><?php echo get_the_title();?></p>
+							<?php endif;
+						endforeach;
+					?> </div> <?php
 
 				// End of repertoire page
 				// All other pages
