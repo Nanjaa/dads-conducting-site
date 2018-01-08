@@ -15,12 +15,11 @@
 ?>
 
 		</div><!-- #content -->
-
-		<footer>
-			<p>&copy;<?php echo date('Y'); ?> warrenolfert.com | <?php the_field('email', 2); ?></p>
-		</footer><!-- #colophon -->
 	</div><!-- .site-content-contain -->
 </div><!-- #page -->
+<footer>
+	<p>&copy;<?php echo date('Y'); ?> warrenolfert.com | <?php the_field('email', 2); ?></p>
+</footer><!-- #colophon -->
 <?php wp_footer(); ?>
 </body>
 </html>

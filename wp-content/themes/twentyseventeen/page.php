@@ -108,6 +108,35 @@ get_header(); ?>
 
 				// End of Thoughs Landing
 
+				// Repertoire Page
+				} else if ( is_page(5)) {
+					echo '<h2>';
+					echo the_field('content_title');
+					echo '</h2>';
+
+					$terms = get_terms( 'repertoire_type' );
+					if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
+					    echo '<div class="filter-list"><h3>Filter Repertoire</h3><ul>';
+					    foreach ( $terms as $term ) {
+					        echo '<li>' . $term->name . '</li>';
+					    }
+					    echo '</ul></div>';
+					}
+
+					echo '<h3>Pieces:</h3>';
+
+					$posts = get_posts( array(
+					    'post_type' => 'repertoire_pieces'
+					) );
+					
+					foreach ($posts as $post):
+						setup_postdata($post); ?>
+						<?php
+						the_title( '<p>', '</p>');?>
+					<?php
+					endforeach;
+					
+				// End of repertoire page
 				// All other pages
 				} else {
 					while ( have_posts() ) : the_post();

@@ -4590,8 +4590,11 @@ i.close-navigation {
 
 /* ------------------------------------------------------------ Landing Page ------------------------------------------------------------ */
 body#landing-body {
-    background-size: cover;
-    background-position: center 15%;
+    -webkit-background-size: cover !important;
+	-moz-background-size: cover !important;
+	-o-background-size: cover !important;
+	background-size: cover !important;
+	overflow: hidden;
 }
 
 header#landing-header-wrap {
@@ -4641,15 +4644,19 @@ nav#landing-navigation {
 }
 
 @media screen and (min-width: 1280px) {
-/*	#landing-navigation:hover li a {
+	#landing-navigation ul:hover li a {
 	    opacity: .5;
 	    transition: all 0.25s ease-out;
-	}*/
+	}
+
+	nav#landing-navigation {
+	    display:  block !important;
+	}
 }
 
-@media screen and (min-width: 768px) and (max-width: 1279px) {
+@media screen and (max-width: 1279px) {
 	body#landing-body {
-	    background-position: 90% center;
+	    background-position: 90% center !important;
 	}
 	.landing-header {
 	    width: 450px;
@@ -4668,6 +4675,7 @@ nav#landing-navigation {
 
 	nav#landing-navigation {
 	    display:  none;
+	    overflow-y: scroll;
 	}
 
 	#landing-body i.open-navigation {
@@ -4676,10 +4684,22 @@ nav#landing-navigation {
 	    transform: none;
 	}
 
-/*	#landing-navigation ul:hover li a {
+	#landing-navigation ul:hover li a {
 	    opacity: .5;
 	    transition: all 0.25s ease-out;
-	}*/
+	}
+}
+
+@media screen and (max-width: 767px) {
+	body#landing-body {
+	    background-position: 65% center !important;
+	}
+
+	.landing-header {
+	    max-width:  85%;
+	    top: 50%;
+	    transform: translateY(-50%) translateX(-50%);
+	}
 }
 
 
@@ -4702,6 +4722,9 @@ nav#landing-navigation {
     letter-spacing: initial;
 }
 
+#page:not(#landing-body #page) {
+    min-height: calc(100vh - 74px);
+}
 
 
 
@@ -5083,4 +5106,28 @@ header.page-header.search-header {
 
 .search-header h2.page-title {
     border-bottom: 1px solid #A22020;
+}
+
+/* Repertoire */
+.filter-list h3 {
+    margin:  0;
+}
+
+.filter-list ul {
+    margin:  0;
+}
+
+.filter-list li {
+    list-style:  none;
+    display:  inline-block;
+    background:  #A22020;
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: #FCFCFC;
+    cursor:  pointer;
+    margin:  5px;
+}
+
+.filter-list li:hover {
+    background:  #701212;
 }
