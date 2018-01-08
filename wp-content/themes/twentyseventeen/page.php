@@ -117,6 +117,7 @@ get_header(); ?>
 					$terms = get_terms( 'repertoire_type' );
 					if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
 					    echo '<div class="filter-list"><h3>Filter Repertoire</h3><ul>';
+					    echo '<li class="filter-reset filter-active">All</li>';
 					    foreach ( $terms as $term ) {
 					        echo '<li>' . $term->name . '</li>';
 					    }
@@ -135,7 +136,7 @@ get_header(); ?>
 						the_title( '<p>', '</p>');?>
 					<?php
 					endforeach;
-					
+
 				// End of repertoire page
 				// All other pages
 				} else {

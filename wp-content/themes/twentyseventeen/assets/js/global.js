@@ -286,4 +286,21 @@
 		$('body').css('overflow', 'auto');
 	});
 
+	// Repertoire
+
+	$('.filter-list li').on('click', function() {
+		$('.filter-reset').removeClass('filter-active');
+		if ($(this).hasClass('filter-active')) {
+			$(this).removeClass('filter-active');
+			// if (!$('.filter-list').find('.filter-active')) {
+			// 	$('.filter-reset').addClass('filter-active');
+			// }
+		} else if ($(this).hasClass('filter-reset')) {
+			$('.filter-active').removeClass('filter-active');
+			$(this).addClass('filter-active');
+		} else {
+			$(this).addClass('filter-active');
+		}
+	})
+
 })( jQuery );
