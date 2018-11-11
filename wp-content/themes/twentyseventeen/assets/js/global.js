@@ -287,8 +287,6 @@
 	});
 
 	// Repertoire
-
-	// TODO: make sure it resets if nothing is selected
 	var repFilters = [];
 	$('.filter-list li').on('click', function() {
 		$('.filter-reset').removeClass('filter-active');
@@ -302,21 +300,21 @@
 			if (repFilters.length == 0) {
 				$('.filter-reset').addClass('filter-active');
 				repFilters = [];
-				$('.repertoire-pieces p').slideDown('fast');
+				$('.repertoire-pieces .rep-piece').slideDown('fast');
 			}
 		// Reset all filters
 		} else if ($(this).hasClass('filter-reset')) {
 			$('.filter-active').removeClass('filter-active');
 			$(this).addClass('filter-active');
 			repFilters = [];
-			$('.repertoire-pieces p').slideDown('fast');
+			$('.repertoire-pieces .rep-piece').slideDown('fast');
 		// Add filter
 		} else {
 			$(this).addClass('filter-active');
 			repFilters.push($(this).attr('id'));
 		}
 
-		$('.repertoire-pieces p').each(function() {
+		$('.repertoire-pieces .rep-piece').each(function() {
 			var shouldShow = true;
 			for (var filter of repFilters) {
 				if (!$(this).hasClass(filter)) {

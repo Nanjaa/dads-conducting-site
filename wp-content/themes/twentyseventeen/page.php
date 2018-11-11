@@ -24,7 +24,7 @@ get_header(); ?>
 			<?php
 
 				// Media gallery
-				if ( is_page(7)) {
+				if ( is_page(18)) {
 					echo '<h2>';
 					echo the_field('content_title');
 					echo '</h2>';
@@ -36,7 +36,7 @@ get_header(); ?>
 				    $categories = get_categories( array(
 					    'orderby' => 'name',
 					    'order'   => 'ASC',
-					    'exclude' => 3
+					    'exclude' => 6
 					) );
 					 
 					$i = 0;
@@ -54,10 +54,14 @@ get_header(); ?>
 
 					    echo '"><p>' . $category->name . '</p><i class="material-icons accordion-status closed">add</i><i class="material-icons accordion-status open">remove</i></div>';
 					    $category_id = get_cat_ID($category->name);
+
+
 					    $args = array(
-						  'category' => $category_id
+						  'category' => $category_id,
+						  'numberposts' => -1,
+						  'orderby' => 'title',
+					    	'order' => 'ASC'
 						);
-						 
 						$category_posts = get_posts( $args );
 
 						if ($category_posts) {
@@ -84,16 +88,16 @@ get_header(); ?>
 				// End of Media Gallery
 
 				// Thoughts Landing
-				}  else if ( is_page(9)) {
+				}  else if ( is_page(31)) {
 					echo '<h2>';
 					echo the_field('content_title');
 					echo '</h2>';
 
 					// Media Gallery Page
 				    $posts = get_posts( array(
-					    'category' => 3
+					    'category' => 6
 					) );
-					
+
 					foreach ($posts as $post):
 						setup_postdata($post); ?>
 						<div class="thoughts-link-wrap">
@@ -109,12 +113,12 @@ get_header(); ?>
 				// End of Thoughs Landing
 
 				// Repertoire Page
-				} else if ( is_page(5)) {
+				} else if ( is_page(34)) {
 					echo '<h2>';
 					echo the_field('content_title');
 					echo '</h2>';
 
-					$terms = get_terms( 'repertoire_type' );
+					$terms = get_terms( 'genre' );
 					if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
 					    echo '<div class="filter-list"><h3>Filter Repertoire</h3><ul>';
 					    echo '<li class="filter-reset filter-active">All</li>';
@@ -127,24 +131,33 @@ get_header(); ?>
 					?><h3>Pieces:</h3><div class="repertoire-pieces">
 
 					<?php $posts = get_posts( array(
-					    'post_type' => 'repertoire_pieces'
+					    'post_type' => 'repertoire_pieces',
+					    'orderby' => 'title',
+					    'order' => 'ASC'
 					) );
 						foreach ($posts as $post):
 							setup_postdata($post); 
 
-							$post_terms = get_the_terms( get_the_ID(), 'repertoire_type' );
+							$post_terms = get_the_terms( get_the_ID(), 'genre' );
 							if ( $post_terms && ! is_wp_error( $post_terms ) ) : 
 							 
-							    $piece_types = array();
+							    $genres = array();
 							 
 							    foreach ( $post_terms as $post_terms ) {
-							        $piece_types[] = $post_terms->name;
+							        $genres[] = $post_terms->name;
 							    }
 							                         
-							    $joined_terms = join( " ", str_replace(" ", "-", $piece_types) );
+							    $joined_terms = join( " ", str_replace(" ", "-", $genres) );
 							    ?>
 							 
-							    <p class="<?php echo $joined_terms; ?>"><?php echo get_the_title();?></p>
+							 	<div class="<?php echo $joined_terms; ?> rep-piece">
+							 		<div class="fifty">
+										<p><?php echo the_field('composer');?></p>
+									</div>
+									<div class="fifty">
+										<p><?php echo get_the_title();?></p>
+									</div>
+							 	</div>
 							<?php endif;
 						endforeach;
 					?> </div> <?php

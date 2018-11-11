@@ -5108,7 +5108,15 @@ header.page-header.search-header {
 }
 
 .repertoire-pieces p {
-    margin-bottom: 5px;
+    margin-bottom: 0;
+}
+.fifty {
+	display: inline-block;
+	width: 49.5%;
+}
+.rep-piece {
+	border-bottom: 1px solid #A22020;
+	margin: 5px 0;
 }
 
 /* ------------------------------------------------------------ Navigation Animation ------------------------------------------------------------ */

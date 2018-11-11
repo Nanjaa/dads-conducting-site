@@ -21,7 +21,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
 	</head>
-	<body id="landing-body" <?php body_class();?> style="background: url(<?php the_field('landing_page_background', 2); ?>) no-repeat center 15% fixed;">
+	<body id="landing-body" <?php body_class();?> style="background: url(<?php the_field('landing_page_background', 14); ?>) no-repeat center 15% fixed;">
 
 		<script>
 			$(document).ready(function() {
