@@ -132,8 +132,10 @@ get_header(); ?>
 
 					<?php $posts = get_posts( array(
 					    'post_type' => 'repertoire_pieces',
-					    'orderby' => 'title',
-					    'order' => 'ASC'
+					    'meta_key' => 'composer',
+					    'orderby' => 'meta_value',
+					    'order' => 'ASC',
+					    'numberposts' => -1
 					) );
 						foreach ($posts as $post):
 							setup_postdata($post); 

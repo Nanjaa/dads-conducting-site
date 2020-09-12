@@ -4404,11 +4404,13 @@ i, .filter-list li {
 .banner-image {
 	height: 100%;
 	width: 100%;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    filter: grayscale(100%);
-    opacity: .4;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: fixed;
+	filter: grayscale(100%);
+	opacity: .4;
+	max-height: 500px;
 }
 
 .banner-details {
